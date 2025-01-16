@@ -12,8 +12,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="min-h-screen bg-gray-100">
-      {children}
+    <div className="h-[100dvh] bg-gray-100 flex flex-col">
+      <div className="flex-1 overflow-y-auto no-scrollbar">
+       {children}
+      </div>
       <Footer />
     </div>
   );

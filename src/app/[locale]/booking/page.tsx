@@ -55,10 +55,10 @@ export default function Home() {
   
 
   return (
-    <div>
+    <div className='size-full'>
       {/* Main Content */}
-      <main className="lg:container lg:mx-auto pb-10 lg:py-6 w-full lg:h-screen overflow-hidden">
-        <div className="flex flex-col lg:flex-row items-start justify-between w-full">
+      <main className="lg:container lg:mx-auto lg:py-6 size-full overflow-hidden">
+        <div className="flex flex-col lg:flex-row items-start justify-between size-full">
           {/* Car Image */}
           <div className='w-full'>
             <header className="bg-zinc-900 text-white p-4 lg:rounded-lg w-full lg:w-[50%]">
@@ -94,7 +94,7 @@ export default function Home() {
                 <NavMenu />
               </div>
             </header>
-            <div className="relative overflow-hidden w-full h-[400px] lg:h-[600px]">
+            <div className="relative overflow-hidden w-full h-[300px] md:h-[400px] lg:h-[600px]">
               <Image
                 src={Car}
                 alt="Car"
@@ -105,7 +105,7 @@ export default function Home() {
           </div>
 
           {/* Service Selection */}
-          <div className="space-y-6 w-full lg:max-w-[35%] px-6 lg:px-0">
+          <div className="space-y-6 w-full h-full lg:max-w-[35%] px-4 lg:px-0 flex flex-col">
             {/* Tabs */}
             <div className="flex gap-4 border-b border-gray-200 bg-[rgba(0,00,0.99)] rounded-lg overflow-auto whitespace-nowrap w-[calc(100%-2px)] no-scrollbar">
               {['POLISH', 'THERMAL TINT', 'PROTECTION FILM', 'NANO CERAMIC'].map((tab) => (
@@ -122,9 +122,9 @@ export default function Home() {
                 </button>
               ))}
             </div>
-
             {/* Service Cards */}
-            <div className="hidden lg:block gap-2 space-y-2 overflow-auto lg:h-[calc(100vh-170px)] no-scrollbar">
+            <div className='flex-1 overflow-y-auto no-scrollbar space-y-2'>
+            <div className="hidden flex-1 lg:block gap-2 space-y-2">
               {services.map((service) => (
                 <ServiceCard key={service.title} {...service} />
               ))}
@@ -138,6 +138,7 @@ export default function Home() {
                   <ServiceCard key={service.title} {...service} />
                 ))}
               </Carousel>
+            </div>
             </div>
           </div>
         </div>
